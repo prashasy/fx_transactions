@@ -11,5 +11,11 @@ mongoose
 
 
 const transactionsModel = require('./transactions');
+const ratesModel = require('./rates');
+const branchesModel = require('./branches');
 
-module.exports = { 'transactionsModel': transactionsModel }
+module.exports = {
+    'transactionsModel': transactionsModel,
+    'ratesModel': ratesModel,
+    'branchesModel': branchesModel
+}

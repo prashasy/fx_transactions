@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import { AdminPage } from './Components/AdminPage';
+import { LandingPage } from './Components/LandingPage';
+import { MarketPlace } from './Components/MarketPlace';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route
+        exact
+        path="/"
+        render={() => (
+          <LandingPage />
+        )}
+      />
+      <Route
+        path="/market/:branch"
+        render={() => (
+          <MarketPlace />
+        )}
+      />
+      <Route
+        path="/admin/:branch"
+        render={() => (
+          <AdminPage />
+        )}
+      />
+    </BrowserRouter>
   );
 }
 
