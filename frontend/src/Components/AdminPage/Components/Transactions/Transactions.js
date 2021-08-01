@@ -18,7 +18,6 @@ const Transactions = ({ filter }) => {
         }
         else if (doRefresh || !transactions) {
             axios.get(`http://localhost:3001/admin/transactions/${branchId}`).then((res) => {
-                console.log(res.data);
                 setTransactions(res.data);
             }).finally((res) => { setDoRefresh(false) });
         }

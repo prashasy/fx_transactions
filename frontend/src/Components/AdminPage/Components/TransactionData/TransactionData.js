@@ -7,6 +7,8 @@ import './TransactionData.css';
 const TransactionData = ({ data: transactionData, refresh }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalTransaction, setModalTransaction] = useState(null);
+    const totalAmount = transactionData?.reduce((acc, data) => acc + data.amountSpread, 0);
+    console.log(totalAmount);
     const handleClick = (transactionId) => {
         let tr_data = transactionData.find((data) =>
             data.transactionId === transactionId
@@ -26,17 +28,26 @@ const TransactionData = ({ data: transactionData, refresh }) => {
     Modal.setAppElement(document.getElementById('data-div'));
     return (
         <div className="data-container" id='data-div'>
+            {transactionData && <div className='data-header-container'>
+                <div className='row'>
+                    <span>Transactions : {transactionData?.length}</span>
+                    <span>Amount Spread : {totalAmount?.toFixed(2)}</span>
+                </div>
+            </div>}
             <table>
                 <thead><tr>
                     <th>Client Name</th>
                     <th>Currency</th>
-                    {/* <th>Amount</th> */}
+                    <th>Quantity</th>
+                    <th>Amount Spread</th>
                 </tr></thead>
                 <tbody>
-                    {transactionData?.map(({ transactionId, clientName, currency }) =>
+                    {transactionData?.map(({ transactionId, clientName, currency, quantity, amountSpread }) =>
                         <tr onClick={() => handleClick(transactionId)} key={transactionId}>
                             <td>{clientName}</td>
                             <td>{currency}</td>
+                            <td>{quantity}</td>
+                            <td>{amountSpread}</td>
                         </tr>
                     )}
                 </tbody>

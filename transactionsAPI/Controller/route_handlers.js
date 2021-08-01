@@ -70,6 +70,8 @@ const calculateResult = (transactions) => {
     let amountHQSum = 0, amountSpreadSum = 0;
     let currencyWiseSummary = {};
     transactions.forEach((data) => {
+        if (data.status !== 'APPROVED')
+            return;
         if (!currencyWiseSummary[data.currency]) {
             currencyWiseSummary[data.currency] = { quantity: 0, amountHQSum: 0, amountSpreadSum: 0, profit: 0, totalTransactions: 0 };
         }
