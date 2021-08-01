@@ -5,11 +5,14 @@ const transactionsSchema = new mongoose.Schema(
     {
         transactionId: { type: String, unique: true, required: [true, 'Required field'] },
         clientName: { type: String, required: true },
+        clientIdNumber: { type: Number, required: true },
         position: { type: String, enum: ['BUY', 'SELL'], required: [true, 'Required field'] },
         currency: String,
-        rateHQ: String,
-        rateSpread: String,
-        amount: Number,
+        rateHQ: Number,
+        rateSpread: Number,
+        amountHQ: Number,
+        amountSpread: Number,
+        quantity: Number,
         branchId: String,
         status: { type: String, enum: ['PENDING', 'APPROVED', 'REJECTED'] }
     },
