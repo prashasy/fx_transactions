@@ -1,0 +1,51 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.Modal {
+    position: absolute;
+    width:60%;
+    height:30%;
+    top: 30%;
+    left: 30%;
+    background-color: rgb(160, 243, 243);
+  }
+
+  .modal-data-container{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      padding:5px;
+  }
+  .modal-data-row{
+      display: flex;
+      justify-content: space-between;
+      padding:10px;
+  }
+
+  .btn{
+    margin-top: 5px;
+    border-radius:5px 5px 5px 5px;
+    width:30%;
+    height:40px
+  }
+.approve-btn{
+    background-color: rgb(145, 228, 22);
+}
+.reject-btn{
+    background-color:rgb(175, 18, 18);
+    color:white;
+}
+  
