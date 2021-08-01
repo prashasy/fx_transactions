@@ -4,15 +4,17 @@ import './TransactionSummary.css';
 const TransactionSummary = ({ summary: transactionSummary }) => {
     const currencyWiseSummary = transactionSummary?.currencyWiseSummary || null;
     return (
-        <div className='summary-container'>
-            <div className='summary-header-container'>
-                <div className='row'>
-                    <span>Amount HQ : {transactionSummary?.amountHQSum?.toFixed(2)}</span>
-                    <span>Transactions : {transactionSummary?.totalTransactions}</span>
-                </div>
-                <div className='row'>
-                    <span>Amount Spread : {transactionSummary?.amountSpreadSum?.toFixed(2)}</span>
-                    <span>Profit : {transactionSummary?.profit?.toFixed(2)}</span>
+        <>
+            <div className='summary-container'>
+                <div className='summary-header-container'>
+                    <div className='row'>
+                        <span>Amount HQ : {transactionSummary?.amountHQSum?.toFixed(2)}</span>
+                        <span>Transactions : {transactionSummary?.totalTransactions}</span>
+                    </div>
+                    <div className='row'>
+                        <span>Amount Spread : {transactionSummary?.amountSpreadSum?.toFixed(2)}</span>
+                        <span>Profit : {transactionSummary?.profit?.toFixed(2)}</span>
+                    </div>
                 </div>
             </div>
             <div className='list-container'>
@@ -41,7 +43,7 @@ const TransactionSummary = ({ summary: transactionSummary }) => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </>
     );
 };
 

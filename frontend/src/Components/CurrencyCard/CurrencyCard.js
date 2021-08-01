@@ -91,7 +91,7 @@ const CurrencyCard = (props) => {
             </div>
             <Modal
                 isOpen={modalInfo.isModalOpen}
-                onRequestClose={() => modalInfo.setModalInfo({ isModalOpen: false })}
+                onRequestClose={() => setModalInfo({ isModalOpen: false })}
                 contentLabel="Confirm Order"
                 className="modal"
             >
