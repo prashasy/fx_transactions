@@ -8,7 +8,6 @@ const TransactionData = ({ data: transactionData, refresh }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalTransaction, setModalTransaction] = useState(null);
     const totalAmount = transactionData?.reduce((acc, data) => acc + data.amountSpread, 0);
-    console.log(totalAmount);
     const handleClick = (transactionId) => {
         let tr_data = transactionData.find((data) =>
             data.transactionId === transactionId
@@ -27,7 +26,7 @@ const TransactionData = ({ data: transactionData, refresh }) => {
     }
     Modal.setAppElement(document.getElementById('data-div'));
     return (
-        <div className="data-container" id='data-div'>
+        <div className="transaction-data-container" id='data-div'>
             {transactionData && <div className='data-header-container'>
                 <div className='row'>
                     <span>Transactions : {transactionData?.length}</span>
@@ -54,7 +53,6 @@ const TransactionData = ({ data: transactionData, refresh }) => {
             </table>
             <Modal
                 isOpen={isModalOpen}
-                // onAfterOpen={afterOpenModal}
                 onRequestClose={() => setIsModalOpen(false)}
                 contentLabel="Transaction Details"
                 className="Modal"
@@ -73,7 +71,7 @@ const TransactionData = ({ data: transactionData, refresh }) => {
                         <span>Quantity: {modalTransaction?.quantity}</span>
                         <span>Amount: {(modalTransaction?.amountSpread)?.toFixed(2)}</span>
                     </div>
-                    <div className="modal-data-row">
+                    <div className="modal-data-row modal-cta">
                         <button className="btn approve-btn" onClick={() => handleUpdateTransaction('APPROVED')}>Approve</button>
                         <button className="btn reject-btn" onClick={() => handleUpdateTransaction('REJECTED')}>Reject</button>
                     </div>

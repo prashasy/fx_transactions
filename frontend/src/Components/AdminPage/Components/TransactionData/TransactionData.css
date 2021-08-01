@@ -13,13 +13,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
+.transaction-data-container{
+    margin:20px;
+}
 .Modal {
     position: absolute;
-    width:60%;
-    height:30%;
+    width:50%;
+    height:32%;
     top: 30%;
-    left: 30%;
+    left: 25%;
     background-color: rgb(160, 243, 243);
   }
 
@@ -32,7 +34,9 @@ tr:nth-child(even) {
   .modal-data-row{
       display: flex;
       justify-content: space-between;
+      width:70%;
       padding:10px;
+      gap:10px;
   }
 
   .btn{
@@ -41,6 +45,9 @@ tr:nth-child(even) {
     width:30%;
     height:40px
   }
+.modal-cta{
+    justify-content: space-evenly;
+}
 .approve-btn{
     background-color: rgb(145, 228, 22);
 }
